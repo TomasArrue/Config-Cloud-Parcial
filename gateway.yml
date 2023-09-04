@@ -11,14 +11,11 @@ spring:
           enabled: true
       rotes:
         - id: catalogRoute
-          uri: http://localhost:8081
+          uri: lb://catalog-service/
           predicates:
-            - Patch=/**
-#          uri: lb://catalog-service/
-#          predicates:
-#            - Path=/api/v1/catalog/**
-#            - Path=/catalog/**
-#            - Path=/**
+            - Patch=/catalog/**
+          filters:
+            - PrefixPath=/api/v1
 
 eureka:
   client:
