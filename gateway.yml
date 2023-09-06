@@ -13,9 +13,7 @@ spring:
         - id: catalogRoute
           uri: lb://catalog-service/
           predicates:
-            - Patch=/catalog/**
-          filters:
-            - PrefixPath=/api/v1
+            - Patch=/**
 
 eureka:
   client:
