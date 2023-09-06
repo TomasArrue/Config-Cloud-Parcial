@@ -9,7 +9,7 @@ spring:
       discovery:
         locator:
           enabled: true
-      rotes:
+      routes:
         - id: catalogRoute
           uri: lb://catalog-service/
           predicates:
